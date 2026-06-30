@@ -52,11 +52,13 @@ a {
   }
 
   .visitante-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--uc-ink);
-  }
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #1a1a1e;  /* Gris muy oscuro en lugar de negro puro */
+  /* o usa un gris oscuro más suave */
+  background: #5c5c62;
+}
 
   .visitante-header-content {
     max-width: 1180px;
