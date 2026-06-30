@@ -1,0 +1,406 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap");
+
+/* ==========================================
+   TOKENS DE MARCA — mismos del módulo público
+   ========================================== */
+:root {
+  --uc-ink: #0b0b0c;
+  --uc-ink-soft: #1c1c1f;
+  --uc-paper: #ffffff;
+  --uc-paper-soft: #f4f4f5;
+  --uc-accent: #7c2ae8;
+  --uc-accent-deep: #5b17b8;
+  --uc-line: #e4e4e7;
+  --uc-muted: #6b6b70;
+
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --background: var(--uc-paper);
+  --foreground: var(--uc-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--uc-paper-soft);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+/* ==========================================
+   LOGIN — pantalla negra centrada, tarjeta blanca
+   ========================================== */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--uc-ink);
+  background-image: radial-gradient(
+    circle at 80% 15%,
+    rgba(124, 42, 232, 0.45),
+    transparent 55%
+  );
+  padding: 1.5rem;
+}
+
+.login-card-container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--uc-paper);
+  border-radius: 1rem;
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+}
+
+.login-card-container h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--uc-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.75rem;
+}
+
+.login-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--uc-line);
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--uc-ink);
+  background: var(--uc-paper);
+  transition: border-color 0.15s ease;
+}
+
+.login-input-field:focus {
+  outline: none;
+  border-color: var(--uc-accent);
+}
+
+.login-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.login-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.login-btn-primary {
+  background: var(--uc-accent);
+  color: var(--uc-paper);
+}
+
+.login-btn-primary:hover {
+  background: var(--uc-accent-deep);
+  transform: translateY(-1px);
+}
+
+.login-btn-secondary {
+  background: var(--uc-paper-soft);
+  color: var(--uc-ink);
+}
+
+.login-btn-secondary:hover {
+  background: var(--uc-line);
+}
+
+.login-btn-logout {
+  background: transparent;
+  color: var(--uc-accent-deep);
+  border: 1.5px solid var(--uc-accent-deep);
+}
+
+.login-btn-logout:hover {
+  background: #f5edff;
+}
+
+.login-btn-visitante {
+  background: transparent;
+  color: var(--uc-muted);
+  border: 1.5px solid var(--uc-line);
+}
+
+.login-btn-visitante:hover {
+  border-color: var(--uc-ink);
+  color: var(--uc-ink);
+}
+
+.login-msg-success {
+  color: #1a7f37;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.login-msg-error {
+  color: #c4281c;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.login-token-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--uc-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-token-box {
+  background: var(--uc-ink);
+  color: #c7c7cc;
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* ==========================================
+   CURSOS — vista protegida del portal
+   ========================================== */
+.cursos-layout {
+  min-height: 100vh;
+  background: var(--uc-paper-soft);
+}
+
+.cursos-nav {
+  background: var(--uc-ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2rem;
+}
+
+.cursos-nav-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--uc-paper);
+  font-size: 1rem;
+}
+
+.cursos-btn-exit {
+  background: var(--uc-accent);
+  color: var(--uc-paper);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+}
+
+.cursos-btn-exit:hover {
+  background: var(--uc-accent-deep);
+}
+
+.cursos-main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.cursos-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--uc-ink);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.cursos-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--uc-paper);
+  border-radius: 0.85rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.35);
+}
+
+.cursos-table thead {
+  background: var(--uc-ink);
+}
+
+.cursos-table th {
+  text-align: left;
+  color: var(--uc-paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.9rem 1.25rem;
+}
+
+.cursos-table td {
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--uc-line);
+  font-size: 0.92rem;
+  color: var(--uc-ink-soft);
+}
+
+.cursos-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cursos-table tbody tr:hover {
+  background: var(--uc-paper-soft);
+}
+
+.cursos-table a {
+  color: var(--uc-accent-deep);
+  font-weight: 600;
+}
+
+.cursos-table a:hover {
+  text-decoration: underline;
+}
+
+.cursos-td-code {
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--uc-accent-deep);
+}
+
+/* ==========================================
+   DETALLE DEL CURSO (mismo estilo que Next.js)
+   ========================================== */
+.detalle-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: var(--uc-paper);
+  border-radius: 1rem;
+  border: 1px solid var(--uc-line);
+  border-top: 4px solid var(--uc-accent);
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.3);
+}
+
+.detalle-loading-text {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--uc-muted);
+}
+
+.detalle-titulo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--uc-ink);
+  margin-bottom: 1.25rem;
+}
+
+.detalle-descripcion {
+  color: var(--uc-ink-soft);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.detalle-descripcion strong {
+  color: var(--uc-ink);
+}
+
+.detalle-info {
+  margin-bottom: 0.85rem;
+  color: var(--uc-ink-soft);
+}
+
+.detalle-info strong {
+  color: var(--uc-ink);
+}
+
+.detalle-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.detalle-badge-alta {
+  background: #ede1fb;
+  color: var(--uc-accent-deep);
+}
+
+.detalle-badge-media {
+  background: var(--uc-paper-soft);
+  color: var(--uc-muted);
+}
+
+.detalle-precio {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--uc-accent-deep);
+}
+
+.detalle-btn-volver {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--uc-ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--uc-accent);
+  padding-bottom: 2px;
+}
+
+.detalle-btn-volver:hover {
+  color: var(--uc-accent-deep);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 640px) {
+  .login-card-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .cursos-main-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .cursos-table th,
+  .cursos-table td {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.85rem;
+  }
+}

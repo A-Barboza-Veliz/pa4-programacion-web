@@ -1,0 +1,17 @@
+# Dependencias
+**/node_modules
+
+# Next.js
+modulo-publico-nextjs/.next
+modulo-publico-nextjs/out
+
+# Vite
+portal-estudiante-react/dist
+portal-estudiante-react/*.tsbuildinfo
+
+# Entorno
+**/.env
+**/.env.local
+
+# Logs
+*.log

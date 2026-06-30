@@ -1,0 +1,45 @@
+[
+  { 
+    "id": 1, 
+    "nombre": "Desarrollo web avanzado", 
+    "codigo": "REQ-101", 
+    "creditos": 4, 
+    "profesor": "Michael Rodriguez",
+    "descripcion": "Curso avanzado sobre desarrollo web.",
+   "precio": 500
+  },
+  { 
+    "id": 2, 
+    "nombre": "Arquitectura de Sistemas con Next.js", 
+    "codigo": "NXJ-202", 
+    "creditos": 5, 
+    "profesor": "Maria Lopez",
+    "descripcion": "Enfoque avanzado en frameworks de servidor.",
+    
+    "precio": 750
+  },
+  { 
+    "id": 3, 
+    "nombre": "Bases de Datos NoSQL", 
+    "codigo": "NOS-404", 
+    "creditos": 3, 
+    "profesor": "Carlos Ruiz" ,
+    "precio": 750
+  },
+  { 
+    "id": 4, 
+    "nombre": "Inteligencia Artificial Básica", 
+    "codigo": "IAI-303", 
+    "creditos": 4, 
+    "profesor": "Ana Gomez" ,
+    "precio": 750
+  },
+  { 
+    "id": 5, 
+    "nombre": "Seguridad Informática", 
+    "codigo": "SEG-505", 
+    "creditos": 4, 
+    "profesor": "Luis Torres" ,
+    "precio": 750
+  }
+]

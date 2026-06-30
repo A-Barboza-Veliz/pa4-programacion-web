@@ -1,0 +1,497 @@
+@import "tailwindcss";
+/* ==========================================
+   TOKENS DE MARCA — estilo "campus universitario"
+   Header negro sticky, acento morado vibrante,
+   tipografía condensada en mayúsculas para el hero.
+   ========================================== */
+:root {
+  --uc-ink: #0b0b0c;
+  --uc-ink-soft: #1c1c1f;
+  --uc-paper: #ffffff;
+  --uc-paper-soft: #f4f4f5;
+  --uc-accent: #7c2ae8;
+  --uc-accent-deep: #5b17b8;
+  --uc-line: #e4e4e7;
+  --uc-muted: #6b6b70;
+
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --background: var(--uc-paper);
+  --foreground: var(--uc-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   HEADER / NAV — negro sólido, sticky
+   ========================================== */
+@layer components {
+  .visitante-container {
+    min-height: 100vh;
+    background: var(--uc-paper);
+  }
+
+  .visitante-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--uc-ink);
+  }
+
+  .visitante-header-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .visitante-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .visitante-logo-icon {
+    width: 2.1rem;
+    height: 2.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--uc-paper);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.3rem;
+    border: 2.5px solid var(--uc-paper);
+    border-radius: 0.4rem;
+  }
+
+  .visitante-logo-icon::before {
+    content: "C";
+  }
+
+  .visitante-logo-text {
+    color: var(--uc-paper);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+  }
+
+  .visitante-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .visitante-nav-link {
+    color: #b8b8bd;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .visitante-nav-link:hover {
+    color: var(--uc-paper);
+  }
+
+  .visitante-nav-link.active {
+    color: var(--uc-paper);
+    border-bottom-color: var(--uc-accent);
+  }
+
+  .visitante-nav-link.login {
+    background: var(--uc-accent);
+    color: var(--uc-paper);
+    padding: 0.6rem 1.3rem;
+    border-radius: 999px;
+    border-bottom: none;
+    font-weight: 700;
+    transition: background 0.15s ease;
+  }
+
+  .visitante-nav-link.login:hover {
+    background: var(--uc-accent-deep);
+  }
+
+  /* ==========================================
+     HERO — fondo negro, badge, título condensado
+     con bloque de resaltado morado
+     ========================================== */
+  .visitante-hero {
+    background: var(--uc-ink);
+    background-image: radial-gradient(
+      circle at 85% 15%,
+      rgba(124, 42, 232, 0.4),
+      transparent 55%
+    );
+    padding: 4.5rem 1.5rem 7rem;
+  }
+
+  .visitante-hero-content {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .visitante-hero-badge {
+    display: inline-block;
+    border: 1.5px solid #5a5a60;
+    color: var(--uc-paper);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .visitante-hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+    line-height: 1.12;
+    color: var(--uc-paper);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  .visitante-hero-highlight {
+    display: inline-block;
+    background: var(--uc-accent);
+    color: var(--uc-paper);
+    padding: 0.05em 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .visitante-hero-subtitle {
+    font-size: 1.05rem;
+    color: #c7c7cc;
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .visitante-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .visitante-btn-primary {
+    background: var(--uc-accent);
+    color: var(--uc-paper);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.85rem;
+    border-radius: 999px;
+    transition: transform 0.15s ease, background 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .visitante-btn-primary::after {
+    content: "›";
+    font-weight: 800;
+  }
+
+  .visitante-btn-primary:hover {
+    background: var(--uc-accent-deep);
+    transform: translateY(-1px);
+  }
+
+  .visitante-btn-secondary {
+    background: transparent;
+    color: var(--uc-paper);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.85rem;
+    border-radius: 999px;
+    border: 1.5px solid #4a4a4f;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    display: inline-block;
+  }
+
+  .visitante-btn-secondary:hover {
+    border-color: var(--uc-paper);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  /* ==========================================
+     INFO / MISIÓN-VISIÓN-VALORES
+     ========================================== */
+  .visitante-info {
+    max-width: 1180px;
+    margin: -3rem auto 0;
+    padding: 0 1.5rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .visitante-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .visitante-info-card {
+    background: var(--uc-paper);
+    border: 1px solid var(--uc-line);
+    border-radius: 0.9rem;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 20px 45px -22px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .visitante-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.35);
+  }
+
+  .visitante-info-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .visitante-info-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--uc-ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .visitante-info-card p {
+    color: var(--uc-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* ==========================================
+     CATÁLOGO PÚBLICO DE CURSOS
+     ========================================== */
+  .visitante-cursos {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .visitante-cursos-header {
+    text-align: center;
+    margin-bottom: 2.75rem;
+  }
+
+  .visitante-section-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    color: var(--uc-ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .visitante-section-subtitle {
+    color: var(--uc-muted);
+    font-size: 1rem;
+  }
+
+  .visitante-cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .visitante-curso-card {
+    display: block;
+    background: var(--uc-paper);
+    border: 1px solid var(--uc-line);
+    border-radius: 0.85rem;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .visitante-curso-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--uc-accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s ease;
+  }
+
+  .visitante-curso-card:hover {
+    border-color: var(--uc-ink);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -18px rgba(0, 0, 0, 0.3);
+  }
+
+  .visitante-curso-card:hover::before {
+    transform: scaleY(1);
+  }
+
+  .visitante-curso-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--uc-ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .visitante-curso-card p {
+    color: var(--uc-muted);
+    font-size: 0.88rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .visitante-curso-card span {
+    display: inline-block;
+    background: var(--uc-paper-soft);
+    color: var(--uc-ink);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  /* ==========================================
+     DETALLE DEL CURSO (compartido con el portal React)
+     ========================================== */
+  .detalle-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--uc-paper);
+    border-radius: 1rem;
+    border: 1px solid var(--uc-line);
+    border-top: 4px solid var(--uc-accent);
+    box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.3);
+  }
+
+  .detalle-loading-text {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--uc-muted);
+    font-family: var(--font-body);
+  }
+
+  .detalle-titulo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--uc-ink);
+    margin-bottom: 1.25rem;
+  }
+
+  .detalle-descripcion {
+    color: var(--uc-ink-soft);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .detalle-descripcion strong {
+    color: var(--uc-ink);
+  }
+
+  .detalle-info {
+    margin-bottom: 0.85rem;
+    color: var(--uc-ink-soft);
+  }
+
+  .detalle-info strong {
+    color: var(--uc-ink);
+  }
+
+  .detalle-badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .detalle-badge-alta {
+    background: #ede1fb;
+    color: var(--uc-accent-deep);
+  }
+
+  .detalle-badge-media {
+    background: var(--uc-paper-soft);
+    color: var(--uc-muted);
+  }
+
+  .detalle-precio {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--uc-accent-deep);
+  }
+
+  .detalle-btn-volver {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--uc-ink);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-bottom: 2px solid var(--uc-accent);
+    padding-bottom: 2px;
+    transition: color 0.15s ease;
+  }
+
+  .detalle-btn-volver:hover {
+    color: var(--uc-accent-deep);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .visitante-nav {
+    gap: 1rem;
+  }
+
+  .visitante-nav-link {
+    font-size: 0.8rem;
+  }
+
+  .visitante-info-grid,
+  .visitante-cursos-grid {
+    grid-template-columns: 1fr;
+  }
+}
