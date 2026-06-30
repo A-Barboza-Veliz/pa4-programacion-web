@@ -45,5 +45,55 @@
     "profesor": "Luis Torres" ,
     "importancia": "Es la base para aplicaciones escalables y rápidas.",
     "precio": 750
+  },
+  { 
+    "id": 6, 
+    "nombre": "Desarrollo Móvil con React Native", 
+    "codigo": "MOV-606", 
+    "creditos": 4, 
+    "profesor": "Laura Martinez",
+    "descripcion": "Creación de aplicaciones nativas para iOS y Android.",
+    "importancia": "Permite extender el alcance de las aplicaciones web a dispositivos móviles.",
+    "precio": 800
+  },
+  { 
+    "id": 7, 
+    "nombre": "Cloud Computing con AWS", 
+    "codigo": "CLD-707", 
+    "creditos": 5, 
+    "profesor": "Roberto Sánchez",
+    "descripcion": "Gestión de infraestructura y servicios en la nube.",
+    "importancia": "Es vital para el despliegue de sistemas modernos y escalables.",
+    "precio": 900
+  },
+  { 
+    "id": 8, 
+    "nombre": "Testing y Calidad de Software", 
+    "codigo": "TST-808", 
+    "creditos": 3, 
+    "profesor": "Elena Ríos",
+    "descripcion": "Estrategias de pruebas unitarias y de integración.",
+    "importancia": "Garantiza la fiabilidad y estabilidad del código en producción.",
+    "precio": 450
+  },
+  { 
+    "id": 9, 
+    "nombre": "Diseño UX/UI Avanzado", 
+    "codigo": "UXU-909", 
+    "creditos": 3, 
+    "profesor": "Diego Castro",
+    "descripcion": "Principios de diseño centrado en el usuario.",
+    "importancia": "Mejora la experiencia y usabilidad de cualquier plataforma digital.",
+    "precio": 600
+  },
+  { 
+    "id": 10, 
+    "nombre": "DevOps y CI/CD", 
+    "codigo": "DEV-010", 
+    "creditos": 4, 
+    "profesor": "Sofía Méndez",
+    "descripcion": "Automatización de despliegues y gestión de contenedores.",
+    "importancia": "Optimiza el ciclo de vida de desarrollo de software.",
+    "precio": 850
   }
 ]

@@ -54,3 +54,15 @@ token. El logout limpia explícitamente el `localStorage` y el estado en memoria
 ## Credenciales de prueba
 - Correo: `demo@lideratec.com`
 - Clave: `123456`
+
+## 🖼️ Capturas de Pantalla del Proyecto
+Aquí puedes visualizar el avance del portal:
+
+### Pantalla de Login
+![Login](../docs/login.png)
+
+### Listado de Cursos
+![Cursos](../docs/cursos.png)
+
+### Módulo Principal
+![Modulo](../docs/modulo.png)
