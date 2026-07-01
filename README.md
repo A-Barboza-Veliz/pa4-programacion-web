@@ -91,11 +91,25 @@ cd ../modulo-publico-nextjs && npm run build  # genera .next/, pre-renderiza /cu
 
 ## Evidencias y sustentación
 
-- Repositorio: `<pegar enlace de GitHub>`
-- Video de sustentación (YouTube): `<pegar enlace>`
-- Capturas de funcionamiento: agregar en `/docs` o en este README antes de la entrega.
+- Repositorio: https://github.com/A-Barboza-Veliz/pa4-programacion-web.git
+- Video de sustentación (YouTube): https://youtu.be/xAIi1lX1KQA
+
 
 ## Matriz de aportes
 
-Completar antes de la entrega con el detalle real por integrante (ej. quién
-trabajó el portal React, quién el módulo Next.js, quién la documentación).
+| Integrante | Responsabilidad |
+-------------|-----------------
+| Kimberly Pujay Quispe | 100% |
+| Alejandro Barboza Veliz | 100% |
+
+## 🖼️ Capturas de Pantalla del Proyecto
+Aquí puedes visualizar el avance del portal:
+
+### Pantalla de Login
+![Login](./docs/login.png)
+
+### Listado de Cursos
+![Cursos](./docs/cursos.png)
+
+### Módulo Principal
+![Modulo](./docs/modulo.png)
